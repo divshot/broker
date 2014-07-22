@@ -1,0 +1,29 @@
+{
+  "name": "settle",
+  "version": "0.1.0",
+  "description": "Express/Connect middleware that serves local or remote static files",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/ --reporter dot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divshot/settle.git"
+  },
+  "keywords": [
+    "divshot",
+    "superstatic",
+    "send",
+    "serve",
+    "proxy"
+  ],
+  "author": "Divshot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/divshot/settle/issues"
+  },
+  "homepage": "https://github.com/divshot/settle"
+}
