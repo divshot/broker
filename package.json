@@ -25,5 +25,18 @@
   "bugs": {
     "url": "https://github.com/divshot/settle/issues"
   },
-  "homepage": "https://github.com/divshot/settle"
+  "homepage": "https://github.com/divshot/settle",
+  "dependencies": {
+    "deliver": "^0.4.2",
+    "fast-url-parser": "^1.0.6-0",
+    "file-exists": "^0.1.1",
+    "mime-types": "^1.0.1"
+  },
+  "devDependencies": {
+    "connect": "^3.0.2",
+    "mkdirp": "^0.5.0",
+    "mocha": "^1.20.1",
+    "rmdir": "^1.0.4",
+    "supertest": "^0.13.0"
+  }
 }
