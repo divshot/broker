@@ -44,7 +44,7 @@ app.listen(3000, function () {
 });
 ```
 
-Run Tests
+## Run Tests
 
 ```
 npm install
