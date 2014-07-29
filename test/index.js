@@ -5,8 +5,9 @@ var connect = require('connect');
 var request = require('supertest');
 var mkdirp = require('mkdirp');
 var rmdir = require('rmdir');
+var expect = require('chai').expect;
 
-describe.only('static middleware', function() {
+describe('settle', function() {
   afterEach(function (done) {
     if (fs.existsSync('.tmp')) rmdir('.tmp', done);
     else done();
@@ -88,6 +89,30 @@ describe.only('static middleware', function() {
     request(app)
       .get('/.tmp/test.html')
       .expect(404)
+      .end(done);
+  });
+  
+  it('overrides the fullPath method', function (done) {
+    var fullPathCalled = false;
+    var app = connect()
+      .use(static({
+        exists: function () {
+          return true;
+        },
+        fullPath: function (pathname) {
+          fullPathCalled = true;
+          return {
+            root: '/',
+            pathname: pathname
+          }
+        }
+      }));
+    
+    request(app)
+      .get('/')
+      .expect(function () {
+        expect(fullPathCalled).to.equal(true);
+      })
       .end(done);
   });
 });

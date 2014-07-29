@@ -22,9 +22,11 @@ var static = function (options) {
     
     if (!pathname) return next();
     
-    // TODO: perhaps we pass and optional file list into
-    // the deliver module so that we can abstract a lot of this logic away
-    // or instead of passing in a custom "exists()" method
+    if (options.fullPath) {
+      var p = options.fullPath(pathname);
+      root = p.root;
+      req.url = p.pathname;
+    }
     
     deliver(req, {
       root: root,
