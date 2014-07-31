@@ -22,6 +22,9 @@ var static = function (options) {
     
     if (!pathname) return next();
     
+    // Ensure correct mime type
+    var contentType = mime.lookup(pathname);
+    
     if (options.fullPath) {
       var p = options.fullPath(pathname);
       root = p.root;
@@ -30,7 +33,8 @@ var static = function (options) {
     
     deliver(req, {
       root: root,
-      index: indexFile
+      index: indexFile,
+      contentType: contentType
     }).pipe(res);
   };
   

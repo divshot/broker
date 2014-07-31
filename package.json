@@ -1,6 +1,6 @@
 {
   "name": "settle",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Express/Connect middleware that serves local or remote static files",
   "main": "index.js",
   "directories": {
