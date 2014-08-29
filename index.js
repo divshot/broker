@@ -5,7 +5,7 @@ var deliver = require('deliver');
 var fileExists = require('file-exists');
 var mime = require('mime-types');
 
-var static = function (options) {
+module.exports = function (options) {
   options = options || {};
   
   var root = options.root || './';
@@ -47,6 +47,3 @@ var static = function (options) {
     return (fileExists(pathname)) ? pathname : undefined;
   }
 };
-
-
-module.exports = static;

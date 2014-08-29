@@ -7,7 +7,7 @@ var mkdirp = require('mkdirp');
 var rmdir = require('rmdir');
 var expect = require('chai').expect;
 
-describe('settle', function() {
+describe('broker', function() {
   afterEach(function (done) {
     if (fs.existsSync('.tmp')) rmdir('.tmp', done);
     else done();

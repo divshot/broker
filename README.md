@@ -1,11 +1,11 @@
-# settle
+# broker
 
 Express/Connect middleware that serves local or remote static files. 
 
 ## Install
 
 ```
-npm install settle --save
+npm install broker --save
 ```
 
 ## Usage
@@ -14,11 +14,11 @@ Serve static files
 
 ```js
 var express = require('express');
-var settle = require('settle');
+var broker = require('broker');
 
 var app = express();
 
-app.use(settle({
+app.use(broker({
   root: '/public'
 }));
 
@@ -31,11 +31,11 @@ Proxy remote files
 
 ```js
 var express = require('express');
-var settle = require('settle');
+var broker = require('broker');
 
 var app = express();
 
-app.use(settle({
+app.use(broker({
   root: 'http://proxyserver.com'
 }));
 
@@ -44,7 +44,7 @@ app.listen(3000, function () {
 });
 ```
 
-### settle([options])
+### broker([options])
 
 * **options** - the options are similar to the [send module](https://github.com/visionmedia/send#options) because it uses this to serve local static files. Here are a few:
   * `root` - the root directory if serving local files or the url to prepend to requests to proxy remote static files
