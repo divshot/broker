@@ -34,7 +34,8 @@ var static = function (options) {
     deliver(req, {
       root: root,
       index: indexFile,
-      contentType: contentType
+      contentType: contentType,
+      statusCode: 404
     }).pipe(res);
   };
   
