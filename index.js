@@ -31,7 +31,7 @@ module.exports = function (options) {
       req.url = p.pathname;
     }
     
-    deliver(req, {
+    deliver(req, res, {
       root: root,
       index: indexFile,
       contentType: contentType
