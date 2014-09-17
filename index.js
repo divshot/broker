@@ -34,7 +34,8 @@ module.exports = function (options) {
     deliver(req, res, {
       root: root,
       index: indexFile,
-      contentType: contentType
+      contentType: contentType,
+      headers: options.headers
     }).pipe(res);
   };
   
